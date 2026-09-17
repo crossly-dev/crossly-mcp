@@ -1,0 +1,68 @@
+{
+  "name": "@crossly/mcp",
+  "version": "0.1.0",
+  "description": "Self-hostable Model Context Protocol server for Crossly. Exposes the Crossly public API (15 marketplaces, 57 endpoints) as MCP tools so an AI agent (Claude Desktop, Cursor, Cline) can run a reseller's multi-marketplace store end-to-end.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "crossly-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "crossly",
+    "crosslister",
+    "reseller",
+    "poshmark",
+    "ebay",
+    "mercari",
+    "depop",
+    "ai-agent",
+    "claude"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossly-dev/crossly-mcp.git"
+  },
+  "homepage": "https://crossly.net",
+  "dependencies": {
+    "@crossly/sdk": "^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    "./registry": {
+      "types": "./dist/registry.d.ts",
+      "import": "./dist/registry.js"
+    },
+    "./api": {
+      "types": "./dist/api.d.ts",
+      "import": "./dist/api.js"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/crossly-dev/crossly-mcp/issues"
+  }
+}
