@@ -1,0 +1,71 @@
+{
+  "name": "@crossly/buyer-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for the Crossly Buyer API — lets an AI agent manage a shopper's cart, orders, wishlists, offers and cashback.",
+  "license": "MIT",
+  "homepage": "https://crossly.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossly-dev/crossly-mcp.git",
+    "directory": "buyer"
+  },
+  "bugs": {
+    "url": "https://github.com/crossly-dev/crossly-mcp/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "crossly-buyer-mcp": "./dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./registry": {
+      "types": "./dist/registry.d.ts",
+      "import": "./dist/registry.js"
+    },
+    "./api": {
+      "types": "./dist/api.d.ts",
+      "import": "./dist/api.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit --tsBuildInfoFile ./node_modules/.cache/tsc-noemit.tsbuildinfo",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "crossly",
+    "buyer",
+    "shopping",
+    "cart",
+    "cashback",
+    "ai-agent",
+    "claude"
+  ],
+  "dependencies": {
+    "@crossly/buyer-sdk": "^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
